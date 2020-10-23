@@ -4,6 +4,12 @@ import os
 import argparse
 
 def j2p(path):
+    '''
+    converts jpg to png images in a bulk.
+    args : image folder path
+    output: converts and saves in the same folder path tagged with converted
+    return: success status of function call
+    '''
     image_files = glob(os.path.join(path, '*.jpg'))
     for index, filename in enumerate(image_files):
         img = Image.open(filename).convert('RGB')
@@ -11,6 +17,12 @@ def j2p(path):
     return True
 
 def p2j(path):
+    '''
+    converts png to jpg images in a bulk.
+    args : image folder path
+    output: converts and saves in the same folder path tagged with converted
+    return: success status of function call
+    '''
     image_files = glob(os.path.join(path, '*.png'))
     for index, filename in enumerate(image_files):
         img = Image.open(filename).convert('RGB')
@@ -18,6 +30,12 @@ def p2j(path):
     return True
 
 def res_w(path, new_width):
+    '''
+    resizes both jpg and png images in a bulk.
+    args : image folder path and new width value
+    output: resizes and saves in the same folder path tagged with resized_w_
+    return: success status of function call
+    '''
     extension = ['.jpg', '.png']
     for ext in extension:
         image_files = glob(os.path.join(path, '*'+ext))
@@ -30,6 +48,12 @@ def res_w(path, new_width):
     return True
 
 def res_h(path, new_height):
+    '''
+    resizes both jpg and png images in a bulk.
+    args : image folder path and new height value
+    output: resizes and saves in the same folder path tagged with resized_h_
+    return: success status of function call
+    '''
     extension = ['.jpg', '.png']
     for ext in extension:
         image_files = glob(os.path.join(path, '*'+ext))
@@ -42,6 +66,12 @@ def res_h(path, new_height):
     return True
 
 def res_p(path, new_percent):
+    '''
+    resizes both jpg and png images in a bulk.
+    args : image folder path and new percentage value
+    output: resizes and saves in the same folder path tagged with resized_
+    return: success status of function call
+    '''
     extension = ['.jpg', '.png']
     for ext in extension:
         image_files = glob(os.path.join(path, '*'+ext))
@@ -55,6 +85,12 @@ def res_p(path, new_percent):
     return True
 
 def crp_px(path,new_length=None):
+    '''
+    centre crop both jpg and png images in a bulk.
+    args : image folder path and accepts both as percentage and as well pixel value
+    output: crops and saves in the same folder path tagged with cropped_
+    return: success status of function call
+    '''
     extension = ['.jpg', '.png']
     for ext in extension:
         image_files = glob(os.path.join(path, '*'+ext))
